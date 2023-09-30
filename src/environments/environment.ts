@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://web-rtc-mimi.azurewebsites.net/api/',
-  hubUrl: 'https://web-rtc-mimi.azurewebsites.net/hubs/'
+  apiUrl: 'https://movie-rs.azurewebsites.net/api/',
+  hubUrl: 'https://movie-rs.azurewebsites.net/hubs/'
 };
 
 /*

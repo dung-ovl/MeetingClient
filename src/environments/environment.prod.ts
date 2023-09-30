@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://xn--cngngitvit-xkb2932gjea6c.vn/api/',
-  hubUrl: 'https://xn--cngngitvit-xkb2932gjea6c.vn/hubs/'
+  apiUrl: 'https://movie-rs.azurewebsites.net/api/',
+  hubUrl: 'https://movie-rs.azurewebsites.net/hubs/'
 };
