@@ -82,15 +82,27 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.roomId = this.route.snapshot.paramMap.get('id')
     this.createLocalStream()
     this.chatHub.createHubConnection(this.currentUser, this.roomId)
+
+    // const configuration = {
+    //   'iceServers': [{
+    //     urls: 'stun:stun.l.google.com:19302',
+    //   }, {
+    //     urls:"turn:numb.viagenie.ca",
+    //       username:"webrtc@live.com",
+    //       credential:"muazkh"
+    //   }]
+    // };
+
+    // this.myPeer = new RTCPeerConnection(configuration);
     
-    this.myPeer = new Peer(this.currentUser.userName, {
+    this.myPeer = new  Peer(this.currentUser.userName, {
       config: {
         'iceServers': [{
           urls: "stun:stun.l.google.com:19302",          
         },{
-          urls:"turn:numb.viagenie.ca",
-          username:"webrtc@live.com",
-          credential:"muazkh"
+          urls:"relay1.expressturn.com:3478",
+          username:"ef814XXV220NAIIXDS",
+          credential:"GRX9EgMwaLqSakDg"
         }]
       }
     });   
