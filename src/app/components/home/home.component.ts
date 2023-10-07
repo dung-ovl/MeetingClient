@@ -100,9 +100,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         'iceServers': [{
           urls: "stun:stun.l.google.com:19302",          
         },{
-          urls:"relay1.expressturn.com:3478",
-          username:"ef814XXV220NAIIXDS",
-          credential:"GRX9EgMwaLqSakDg"
+          urls:"turn:192.158.29.39:3478?transport=udp",
+          username:"JZEOEt2V3Qb0y27GRntt2u2PAYA=",
+          credential:"28224511:1379330808"
         }]
       }
     });   
