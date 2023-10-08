@@ -95,17 +95,47 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // this.myPeer = new RTCPeerConnection(configuration);
     
+    // this.myPeer = new  Peer(this.currentUser.userName, {
+    //   config: {
+    //     'iceServers': [{
+    //       urls: "stun:stun.l.google.com:19302",          
+    //     },{
+    //       urls:"turn:192.158.29.39:3478?transport=udp",
+    //       username:"JZEOEt2V3Qb0y27GRntt2u2PAYA=",
+    //       credential:"28224511:1379330808"
+    //     }]
+    //   }
+    // });
+
     this.myPeer = new  Peer(this.currentUser.userName, {
       config: {
-        'iceServers': [{
-          urls: "stun:stun.l.google.com:19302",          
-        },{
-          urls:"turn:192.158.29.39:3478?transport=udp",
-          username:"JZEOEt2V3Qb0y27GRntt2u2PAYA=",
-          credential:"28224511:1379330808"
-        }]
+        'iceServers': [
+          {
+            urls: "stun:stun.relay.metered.ca:80",
+          },
+          {
+            urls: "turn:a.relay.metered.ca:80",
+            username: "4af24cfab7a9e683a59be531",
+            credential: "N7WeALiaXC9Ti5i0",
+          },
+          {
+            urls: "turn:a.relay.metered.ca:80?transport=tcp",
+            username: "4af24cfab7a9e683a59be531",
+            credential: "N7WeALiaXC9Ti5i0",
+          },
+          {
+            urls: "turn:a.relay.metered.ca:443",
+            username: "4af24cfab7a9e683a59be531",
+            credential: "N7WeALiaXC9Ti5i0",
+          },
+          {
+            urls: "turn:a.relay.metered.ca:443?transport=tcp",
+            username: "4af24cfab7a9e683a59be531",
+            credential: "N7WeALiaXC9Ti5i0",
+          },
+      ]
       }
-    });   
+    });  
 
     this.myPeer.on('open', userId => {
       console.log(userId)
