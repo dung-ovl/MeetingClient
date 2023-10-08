@@ -145,7 +145,17 @@ export class HomeComponent implements OnInit, OnDestroy {
           },
       ]
       }
-    });  
+    });
+
+    this.myPeer.on("connection", (conn) => {
+      conn.on("data", (data) => {
+          // Will print 'hi!'
+          console.log(data);
+      });
+      conn.on("open", () => {
+          conn.send("hello!");
+      });
+  });
 
     this.myPeer.on('open', userId => {
       console.log(userId)
